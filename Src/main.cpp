@@ -25,8 +25,18 @@ public:
 
 int main()
 {
-	FruitStruct* pFruits = new FruitStruct();
+	shared_ptr<FruitStruct> pFruits = std::make_shared<FruitStruct>();
+	pFruits->Initialize(&testFruitJson);
 
-	delete pFruits;
-	pFruits = nullptr;
+	pFruits->Add("isRipe", true);
+	bool bIsRipe = *pFruits->Get<bool>("isRipe");
+	bool bIsEaten = pFruits->Get("isEaten", false);
+
+	pFruits->Add("isEaten", true);
+	bIsEaten = pFruits->Get("isEaten", false);
+
+	pFruits->Add<string>("fruit", "pineapple");
+	string fruit(*pFruits->Get<string>("fruit"));
+
+	int d = 0;
 }

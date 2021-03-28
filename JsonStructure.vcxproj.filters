@@ -8,50 +8,39 @@
     <Filter Include="src">
       <UniqueIdentifier>{57e6702e-bdc5-479c-ad0a-4021bf6387ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="src\Header Files\Structure">
+    <Filter Include="src\Structure">
       <UniqueIdentifier>{54fbe148-9ebe-4696-9b4a-0991cfdf1622}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Header Files\Utility">
+    <Filter Include="src\Utility">
       <UniqueIdentifier>{86d4e0ae-845c-4913-9492-1194fc6a3afe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="src\Source Files\Structure">
-      <UniqueIdentifier>{a5dcfa9d-3e87-4c19-8578-1158291c1c87}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Source Files\Utility">
-      <UniqueIdentifier>{e76cb61e-78f4-4216-9c8d-d3b1bb07ab44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Source\Utility\XString.cpp">
-      <Filter>src\Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Source\Structure\DataStruct.cpp">
-      <Filter>src\Source Files\Structure</Filter>
-    </ClCompile>
     <ClCompile Include="Src\PCH.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Structure\DataStruct.cpp">
+      <Filter>src\Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\XString.cpp">
+      <Filter>src\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\PCH.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Header\Utility\XString.h">
-      <Filter>src\Header Files\Utility</Filter>
+    <ClInclude Include="Src\Structure\DataStruct.h">
+      <Filter>src\Structure</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Header\Structure\DataStruct.h">
-      <Filter>src\Header Files\Structure</Filter>
+    <ClInclude Include="Src\Utility\XString.h">
+      <Filter>src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Structure\DataStruct_inl.h">
+      <Filter>src\Structure</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

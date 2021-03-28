@@ -27,6 +27,12 @@ namespace JsonStruct
 			m_MemberName = memberName;
 		}
 
+		DataMember(string memberName, DataType memberValue)
+		{
+			m_MemberName = memberName;
+			m_Object = memberValue;
+		}
+
 		template<typename OtherType>
 		DataMember(DataMember<OtherType> &member)
 		{
@@ -55,9 +61,15 @@ namespace JsonStruct
 			return m_Object.has_value();
 		}
 
-		inline DataType GetValue()
+		inline DataType &GetValue()
 		{
-			return m_Object.value;
+			return m_Object.value();
+		}
+
+		template<typename Type>
+		inline Type* GetValuePtr()
+		{
+			return &m_Object.value();
 		}
 
 		inline string GetName()
@@ -65,12 +77,10 @@ namespace JsonStruct
 			return m_MemberName;
 		}
 
-		inline optional<DataType> GetObject()
+		inline optional<DataType> &GetObject()
 		{
 			return m_Object;
 		}
-
-	protected:
 
 	protected:
 
@@ -94,19 +104,30 @@ namespace JsonStruct
 			}
 		}
 
-
 		virtual ~DataStruct() = default;
 
 		virtual void Initialize(void* pJson/* INSERT JSON LIBRARY FORMAT OF CHOICE TODO: Later make it work without having to be explicit*/);
-		void Test_Init(); // REMOVE LATER
+		void Test_Init();
 
 		template<typename Type>
 		DataMember<Type> GetMemberNonNull(string memberName);
 		DataMember<any> GetMemberNonNull(string memberName);
 
+		template<typename Type>
+		Type* Get(string memberName);
+
+		template<typename Type>
+		Type Get(string memberName, Type default);
+
+		template<typename Type>
+		void Add(string memberName, Type member);
+
 	protected:
 		map<string, DataMember<any>> m_Members;
 	};
+
+	#include "DataStruct_inl.h"
+	// INL(DataStruct)
 }
 
 #endif // !__DATA_STRUCT_H__

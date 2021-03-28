@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{E3719B1A-EC10-4DF5-A4CE-CFF8F3991FE7}</ProjectGuid>
     <RootNamespace>JsonStructure</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -85,6 +85,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>D:\VS Projects\JsonStructure\JsonStructure\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,6 +111,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>D:\VS Projects\JsonStructure\JsonStructure\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -122,12 +124,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Src\Source\Structure\DataStruct.cpp" />
-    <ClCompile Include="Src\Source\Utility\XString.cpp" />
+    <ClCompile Include="Src\Structure\DataStruct.cpp" />
+    <ClCompile Include="Src\Utility\XString.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\Header\Structure\DataStruct.h" />
-    <ClInclude Include="Src\Header\Utility\XString.h" />
+    <ClInclude Include="Src\Structure\DataStruct.h" />
+    <ClInclude Include="Src\Structure\DataStruct_inl.h" />
+    <ClInclude Include="Src\Utility\XString.h" />
     <ClInclude Include="Src\PCH.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
